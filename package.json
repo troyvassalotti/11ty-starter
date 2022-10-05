@@ -4,7 +4,10 @@
   "description": "Yet another 11ty template.",
   "scripts": {
     "start": "npx @11ty/eleventy --serve --incremental",
-    "build": "npx @11ty/eleventy"
+    "build": "ELEVENTY_ENV=production npx @11ty/eleventy",
+    "debug": "DEBUG=* eleventy",
+    "netlify::dev": "npx netlify dev",
+    "format": "npx prettier --write ."
   },
   "repository": {
     "type": "git",
@@ -17,6 +20,11 @@
   },
   "homepage": "https://github.com/troyvassalotti/11ty-starter#readme",
   "dependencies": {
-    "@11ty/eleventy": "^1.0.2"
+    "@11ty/eleventy": "^1.0.2",
+    "@11ty/eleventy-plugin-inclusive-language": "^1.0.3",
+    "@11ty/eleventy-plugin-rss": "^1.2.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^4.1.0",
+    "dprint": "^0.32.1",
+    "html-minifier-terser": "^7.0.0"
   }
 }

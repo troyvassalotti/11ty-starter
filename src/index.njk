@@ -1,0 +1,21 @@
+---
+title: Homepage
+description: Welcome to a website.
+---
+
+{% extends 'layouts/base.njk' %}
+
+{% block content %}
+<main id="main" class="flow">
+	<h1>{{ title }}</h1>
+	<p>{{ description }}</p>
+</main>
+{% endblock %}
+
+{% block style %}
+<style>
+	h1 {
+		font-size: 2rem;
+	}
+</style>
+{% endblock %}

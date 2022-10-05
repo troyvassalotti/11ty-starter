@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{{ metadata.title }}</title>
+
+        {# JavaScript #}
+        <script defer src="/public/js/main.js"></script>
+
+        {% block headerScript %}{% endblock %}
+
+        {# Stylesheets #}
+        <link rel="stylesheet" href="/public/css/reset.css">
+        <link rel="stylesheet" href="/public/css/prism.css">
+        <link rel="stylesheet" href="/public/css/main.css">
+		
+		{% block style %}{% endblock %}
+
+		{# SEO Garbage #}
+		{% set SEODescription = description or excerpt or metadata.description %}
+		{% set SEOTitle = title or metadata.title %}
+		<meta name="description" content="{{ SEODescription }}">
+		<meta name="og:locale" content="en_US">
+		<meta name="og:type" content="article">
+		<meta name="og:title" content="{{ SEOTitle }}">
+		<meta name="og:description" content="{{ SEODescription }}">
+		<meta name="og:site_name" content="{{ metadata.domain }}">
+		<meta name="twitter:card" content="summary">
+		<meta name="twitter:title" content="{{ SEOTitle }}">
+		<meta name="twitter:description" content="{{ SEODescription }}">
+		<meta name="twitter:creator" content="{{ metadata.handles.twitter }}">
+
+        {# Other Head Stuff #}
+        <meta name="generator" content="{{ eleventy.generator }}">
+		<link rel="canonical" href="{{ metadata.url }}{{ page.url }}">
+        <link rel="author" href="/humans.txt">
+        <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="RSS Feed">
+    </head>
+    <body>
+		{% block content %}
+		<main id="main" class="flow">
+			{{ content | safe }}
+		</main>
+		{% endblock %}
+
+		{% block script %}{% endblock %}
+	</body>
+</html>
