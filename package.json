@@ -7,7 +7,8 @@
     "build": "ELEVENTY_ENV=production npx @11ty/eleventy",
     "debug": "DEBUG=* eleventy",
     "netlify::dev": "npx netlify dev",
-    "format": "npx prettier --write ."
+    "lint": "npx dprint check",
+    "lint:fix": "npx dprint fmt"
   },
   "repository": {
     "type": "git",
