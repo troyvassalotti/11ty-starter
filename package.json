@@ -5,7 +5,7 @@
   "scripts": {
     "start": "npx @11ty/eleventy --serve --incremental",
     "build": "ELEVENTY_ENV=production npx @11ty/eleventy",
-    "debug": "DEBUG=* eleventy",
+    "debug": "DEBUG=* npx @11ty/eleventy",
     "netlify::dev": "npx netlify dev",
     "lint": "npx dprint check",
     "lint:fix": "npx dprint fmt"
