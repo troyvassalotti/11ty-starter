@@ -1,0 +1,22 @@
+{
+  "name": "11ty-starter",
+  "version": "1.0.0",
+  "description": "Yet another 11ty template.",
+  "scripts": {
+    "start": "npx @11ty/eleventy --serve --incremental",
+    "build": "npx @11ty/eleventy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/troyvassalotti/11ty-starter.git"
+  },
+  "author": "Troy Vassalotti",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/troyvassalotti/11ty-starter/issues"
+  },
+  "homepage": "https://github.com/troyvassalotti/11ty-starter#readme",
+  "dependencies": {
+    "@11ty/eleventy": "^1.0.2"
+  }
+}
